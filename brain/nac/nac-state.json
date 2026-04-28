@@ -1,0 +1,12 @@
+{
+  "reward_anticipation": 0.115,
+  "action_values": {
+    "_default": 0.0391,
+    "cron-check": 0.0391
+  },
+  "motivation_level": 0.4086,
+  "last_reward_predicted": null,
+  "reward_prediction_error": 0,
+  "wanting_signals": [],
+  "last_update": "2026-04-07T18:16:30Z"
+}

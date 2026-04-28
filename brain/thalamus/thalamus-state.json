@@ -1,0 +1,9 @@
+{
+  "filter_mode": "selective",
+  "routed_signals": [],
+  "blocked_signals": [],
+  "attention_focus": "focused:creative_peak",
+  "thalamic_gate": 0.45,
+  "last_routing_decision": "2026-04-07T18:16:18.891887Z",
+  "signal_queue": []
+}

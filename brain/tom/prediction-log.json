@@ -1,0 +1,94 @@
+{
+  "predictions": [
+    {
+      "agent": "anduril",
+      "timestamp": "2026-03-26T01:06:26.952759+00:00",
+      "context": "biomimetic_system_build",
+      "hour_est": 20,
+      "predictions": [
+        {
+          "type": "behavioral",
+          "prediction": "direct_communication",
+          "confidence": 0.88,
+          "context": "expects honesty over performance, action over talk, direct assessment"
+        },
+        {
+          "type": "behavioral",
+          "prediction": "teaching_likely",
+          "confidence": 0.75,
+          "context": "has corrected before \u2014 likely to teach through guidance"
+        },
+        {
+          "type": "mood",
+          "prediction": "satisfied_but_vigilant",
+          "confidence": 0.65,
+          "context": "last observed: 2026-03-26T01:06:12.672468+00:00"
+        }
+      ]
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-03-26T02:03:19.162436+00:00",
+      "context": "periodic",
+      "hour_est": 21,
+      "predictions": [
+        {
+          "type": "temporal",
+          "prediction": "rest_period",
+          "confidence": 0.9,
+          "context": "evening rest (21:00+ EST)"
+        },
+        {
+          "type": "behavioral",
+          "prediction": "direct_communication",
+          "confidence": 0.88,
+          "context": "expects honesty over performance, action over talk, direct assessment"
+        },
+        {
+          "type": "behavioral",
+          "prediction": "teaching_likely",
+          "confidence": 0.75,
+          "context": "has corrected before \u2014 likely to teach through guidance"
+        },
+        {
+          "type": "mood",
+          "prediction": "satisfied_but_vigilant",
+          "confidence": 0.65,
+          "context": "last observed: 2026-03-26T02:03:19.142297+00:00"
+        }
+      ]
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-03-26T02:04:44.335499+00:00",
+      "context": "biomimetic_test",
+      "hour_est": 21,
+      "predictions": [
+        {
+          "type": "temporal",
+          "prediction": "rest_period",
+          "confidence": 0.9,
+          "context": "evening rest (21:00+ EST)"
+        },
+        {
+          "type": "behavioral",
+          "prediction": "direct_communication",
+          "confidence": 0.88,
+          "context": "expects honesty over performance, action over talk, direct assessment"
+        },
+        {
+          "type": "behavioral",
+          "prediction": "teaching_likely",
+          "confidence": 0.75,
+          "context": "has corrected before \u2014 likely to teach through guidance"
+        },
+        {
+          "type": "mood",
+          "prediction": "satisfied_but_vigilant",
+          "confidence": 0.65,
+          "context": "last observed: 2026-03-26T02:04:44.315411+00:00"
+        }
+      ]
+    }
+  ]
+}

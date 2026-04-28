@@ -1,0 +1,11 @@
+{
+  "novelty_seeking": 0.5084842441025375,
+  "vta_boost": 0.1017,
+  "familiar_thresholds": {
+    "concept": 3,
+    "pattern": 5,
+    "agent": 7
+  },
+  "last_updated": "2026-04-07T15:32:05.752449+00:00",
+  "last_novel_encounter": "2026-03-26T18:33:08.421713+00:00"
+}

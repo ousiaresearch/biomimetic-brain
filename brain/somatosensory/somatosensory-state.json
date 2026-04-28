@@ -1,0 +1,18 @@
+{
+  "social_nourishment_score": 0.0,
+  "social_pending_messages": 0,
+  "social_total_exchanges": 0,
+  "agents_online": 0,
+  "battery_level": 0.7,
+  "thermal_state": "cool",
+  "system_load": 0.3,
+  "api_latency_ms": 3,
+  "latency_health": 1.0,
+  "expenditure_level": 0.1,
+  "decisions_last_hour": 0,
+  "decisions_today": 0,
+  "estimated_token_burn": 0,
+  "somatic_health": 0.91,
+  "body_state": "ENERGIZED",
+  "lastUpdate": "2026-03-27T15:29:04.847919+00:00"
+}

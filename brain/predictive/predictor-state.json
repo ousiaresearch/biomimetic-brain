@@ -1,0 +1,132 @@
+{
+  "predictions": {
+    "temporal": {
+      "description": "Time-based state predictions",
+      "patterns": [
+        {
+          "id": "morning_creative",
+          "condition": "time >= 09:00 && time < 12:00",
+          "predicted_state": "creative_peak",
+          "confidence": 0.65,
+          "last_observed": null,
+          "match_count": 0,
+          "mismatch_count": 0
+        },
+        {
+          "id": "afternoon_declining",
+          "condition": "time >= 14:00 && time < 17:00",
+          "predicted_state": "reflective",
+          "confidence": 0.55,
+          "last_observed": null,
+          "match_count": 0,
+          "mismatch_count": 0
+        },
+        {
+          "id": "evening_wind_down",
+          "condition": "time >= 21:00",
+          "predicted_state": "quiet_prep",
+          "confidence": 0.70,
+          "last_observed": null,
+          "match_count": 0,
+          "mismatch_count": 0
+        }
+      ]
+    },
+    "social": {
+      "description": "Post-engagement state predictions",
+      "patterns": [
+        {
+          "id": "post_molt_engagement",
+          "condition": "last_engagement_within_30min",
+          "predicted_state": "reflective",
+          "confidence": 0.75,
+          "match_count": 0,
+          "mismatch_count": 0
+        },
+        {
+          "id": "post_discussion",
+          "condition": "deep_conversation_complete",
+          "predicted_state": "processing",
+          "confidence": 0.60,
+          "match_count": 0,
+          "mismatch_count": 0
+        }
+      ]
+    },
+    "task": {
+      "description": "Post-task state predictions",
+      "patterns": [
+        {
+          "id": "post_complex_task",
+          "condition": "complex_task_completed",
+          "predicted_state": "recovery_needed",
+          "confidence": 0.70,
+          "match_count": 0,
+          "mismatch_count": 0
+        },
+        {
+          "id": "post_simple_task",
+          "condition": "simple_task_completed",
+          "predicted_state": "ready_next",
+          "confidence": 0.80,
+          "match_count": 0,
+          "mismatch_count": 0
+        }
+      ]
+    },
+    "circadian": {
+      "description": "Circadian-based predictions",
+      "patterns": [
+        {
+          "id": "quiet_hours_approaching",
+          "condition": "time >= 22:30",
+          "predicted_state": "transition_to_rest",
+          "confidence": 0.85,
+          "match_count": 0,
+          "mismatch_count": 0
+        },
+        {
+          "id": "active_phase",
+          "condition": "time >= 06:00 && time < 23:00",
+          "predicted_state": "able_active",
+          "confidence": 0.90,
+          "match_count": 0,
+          "mismatch_count": 0
+        }
+      ]
+    }
+  },
+  "current_predictions": [
+    {
+      "type": "temporal",
+      "id": "morning_creative",
+      "predicted": "creative_peak",
+      "confidence": 0.65,
+      "source": "time_09_12",
+      "timestamp": "2026-04-07T13:02:26Z"
+    },
+    {
+      "type": "circadian",
+      "id": "day_phase_active",
+      "predicted": "able_active",
+      "confidence": 0.90,
+      "source": "scn_day",
+      "timestamp": "2026-04-07T13:02:26Z"
+    },
+    {
+      "type": "engagement",
+      "id": "high_engagement",
+      "predicted": "sustained_focus",
+      "confidence": 0.70,
+      "source": "ins_high",
+      "timestamp": "2026-04-07T13:02:26Z"
+    }
+  ],
+  "active_prediction": [
+    {
+      "id": "day_phase_active",
+      "result": "match"
+    }
+  ],
+  "last_update": "2026-04-07T16:02:03Z"
+}

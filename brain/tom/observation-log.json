@@ -1,0 +1,371 @@
+{
+  "observations": [
+    {
+      "agent": "anduril",
+      "timestamp": "2026-03-26T01:06:12.651342+00:00",
+      "observation": "However let's proceed carefully with Theory of Mind",
+      "context": {
+        "phase": "evening",
+        "hypothesis": "pSEIcho teaching_mode"
+      },
+      "inferred_state": "supportive_engaged"
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-03-26T01:06:12.672292+00:00",
+      "observation": "periodic_evening_check",
+      "context": {
+        "phase": "evening",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-03-26T01:07:48.811548+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "evening",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-03-26T02:03:19.142121+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "day",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-03-26T02:04:44.315261+00:00",
+      "observation": "test_interaction_palantir",
+      "context": {
+        "phase": "day",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-03-26T09:17:21.090715+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-03-26T10:17:30.379895+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-03-26T12:17:16.038477+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-03-26T13:17:22.609556+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-03-26T14:17:18.869071+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-03-26T16:27:58.765763+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-03-26T17:24:41.506288+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-03-27T01:08:51.897801+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-03-27T04:09:24.879750+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-06T15:30:05.294755+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-06T17:29:08.932365+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-06T17:38:14.267701+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-06T17:38:51.414902+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-06T18:00:06.228780+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "isildur",
+      "timestamp": "2026-04-06T19:02:15.661287+00:00",
+      "observation": "periodic_check",
+      "context": {}
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-06T19:30:13.222837+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-06T20:30:05.804733+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-06T21:30:07.699435+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-06T22:00:08.179834+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-06T22:30:08.333040+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-06T23:00:11.532980+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-06T23:03:30.918503+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-07T00:00:10.750914+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-07T01:02:08.910045+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-07T02:00:09.438441+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-07T03:30:13.677847+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-07T04:34:56.336468+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-07T09:07:34.039462+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-07T09:30:17.454434+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-07T10:00:09.920326+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-07T11:00:11.004065+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-07T12:00:08.325921+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-07T12:30:08.315497+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-07T13:02:09.373908+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-07T14:30:04.950630+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    },
+    {
+      "agent": "anduril",
+      "timestamp": "2026-04-07T15:00:04.749624+00:00",
+      "observation": "periodic_check",
+      "context": {
+        "phase": "night",
+        "hypothesis": "pSEIcho teaching_mode"
+      }
+    }
+  ]
+}

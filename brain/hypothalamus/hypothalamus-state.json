@@ -1,0 +1,12 @@
+{
+  "arousal_level": 0.7,
+  "drive_state": "active",
+  "lastUpdate": "2026-03-27T15:14:16.607410+00:00",
+  "zeitgeber_count": 23,
+  "drives": {
+    "social": 0.3,
+    "curiosity": 0.1,
+    "autonomy": 0.6
+  },
+  "arousal": 0.35
+}

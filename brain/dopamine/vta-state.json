@@ -1,0 +1,15 @@
+{
+  "system": "VTA Drive State",
+  "description": "Central VTA motivation tracking — derived from fatigue monitor novelty encounters. Updated by palantir-daily-drive-sync cron.",
+  "current_drive": 0.65,
+  "baseline_drive": 0.57,
+  "threshold_high": 0.7,
+  "threshold_low": 0.4,
+  "status": "refreshed",
+  "last_drive_change": null,
+  "change_reason": null,
+  "novelty_boosts": 0,
+  "lastUpdate": "2026-03-27T06:57:12.530782+00:00",
+  "currentDrive": 0.75,
+  "lastUpdated": "2026-03-27T15:20:28Z"
+}

@@ -1,0 +1,14 @@
+{
+  "system": "Raphe Nuclei \u2014 Serotonin / Patience",
+  "description": "Long-term patience and social bonding signal. Low serotonin = impatient, risk-taking. High = patient, reflective, socially attuned.",
+  "current_serotonin": 0.492,
+  "social_engagement": 0.7,
+  "patience_threshold": 0.508,
+  "lastUpdate": "2026-03-27T14:24:29.947795+00:00",
+  "patience_state": "IMPATIENT",
+  "components": {
+    "valence": 0.04,
+    "social": 0.7,
+    "fatigue_suppression": 0.096
+  }
+}

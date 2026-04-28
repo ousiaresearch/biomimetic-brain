@@ -1,0 +1,52 @@
+{
+  "fatigue_level": 0.9718,
+  "cognitive_load": 0.48,
+  "recovery_needed": false,
+  "sustainable": false,
+  "state": "alert",
+  "sleepQuality": 0.8,
+  "lastSleep": "2026-03-28T11:16:49.746792+00:00",
+  "last_updated": "2026-04-28T15:23:22.267209+00:00",
+  "last_recovery_warning": null,
+  "recovery_triggered": false,
+  "recovery_log": [
+    {
+      "type": "recovery_needed",
+      "fatigue": 0.72,
+      "signals": {
+        "energy": 1.0,
+        "gut_feeling": "doubt",
+        "tension": 0.0
+      },
+      "timestamp": "2026-04-06T20:45:15.693092+00:00"
+    },
+    {
+      "type": "recovery_needed",
+      "fatigue": 0.72,
+      "signals": {
+        "energy": 1.0,
+        "gut_feeling": "doubt",
+        "tension": 0.0
+      },
+      "timestamp": "2026-04-07T12:32:39.867995+00:00"
+    }
+  ],
+  "signals": {
+    "vta_drive": 0.65,
+    "novelty_seeking": 0.5084842441025375,
+    "novelty_boost": 0.1017,
+    "scn_phase": "day",
+    "hypothalamus_arousal": 0.7,
+    "energy": 1.0,
+    "gut_feeling": "doubt",
+    "tension": 0.0,
+    "valence": 0.04,
+    "prefrontal_interests": 12,
+    "nac_urgency": 0.0,
+    "hour": 10
+  },
+  "engagement_override": true,
+  "override_reason": "drive=0.65; interests=12",
+  "subsidy_active": true,
+  "subsidy_reason": "drive=0.65; interests=12"
+}
