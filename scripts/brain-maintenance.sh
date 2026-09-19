@@ -3,7 +3,7 @@
 # Runs every 4h via cron — reads canonical brain-state.json
 set -euo pipefail
 
-WORKSPACE="$HOME/.hermes/agents/palantir"
+WORKSPACE="${MIND_AGENT_DIR:-$(cd "$(dirname "$0")/.." && pwd)/agent}"
 LOG_FILE="$WORKSPACE/brain-snapshots/brain-health.log"
 STATE_FILE="$WORKSPACE/brain-state.json"
 MAX_AGE_HOURS=24
@@ -29,7 +29,7 @@ python3 - <<'PYEOF' >> "$LOG_FILE"
 import json, os, sys
 from datetime import datetime
 
-state_file = os.path.expanduser("~/.hermes/agents/palantir/brain-state.json")
+state_file = os.environ.get("MIND_AGENT_DIR", ".") + "/brain-state.json"
 now_ts = datetime.now().timestamp()
 max_age_h = 24
 

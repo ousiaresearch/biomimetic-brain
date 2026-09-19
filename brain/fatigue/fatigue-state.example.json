@@ -1,0 +1,41 @@
+{
+  "_verified": {
+    "at": null,
+    "invariants": []
+  },
+  "cognitive_load": 0.5,
+  "engagement_override": false,
+  "fatigue_level": 0.5,
+  "lastSleep": null,
+  "lastUpdate": null,
+  "last_updated": null,
+  "override_reason": null,
+  "recovery_needed": false,
+  "recovery_triggered": false,
+  "signals": {
+    "_derived_at": null,
+    "_derived_by": null,
+    "cognitive_load": 0.5,
+    "energy": 0.5,
+    "fatigue_level": 0.5,
+    "gut_feeling": null,
+    "hour": 0,
+    "hypothalamus_arousal": 0.5,
+    "nac_urgency": 0.5,
+    "norepinephrine": 0.5,
+    "novelty_seeking": 0.5,
+    "prefrontal_convictions": 0,
+    "prefrontal_interests": 0,
+    "scn_phase": null,
+    "tension": 0.5,
+    "thalamic_gate": 0.5,
+    "valence": 0.5,
+    "vta_drive": 0.5,
+    "wander_budget": 0.5
+  },
+  "sleepQuality": 0.5,
+  "state": null,
+  "subsidy_active": false,
+  "subsidy_reason": null,
+  "sustainable": false
+}

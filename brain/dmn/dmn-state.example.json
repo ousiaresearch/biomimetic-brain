@@ -1,0 +1,31 @@
+{
+  "_seeded": {
+    "at": null,
+    "from": null,
+    "note": null,
+    "window": null
+  },
+  "_verified": {
+    "at": null,
+    "invariants": []
+  },
+  "active": false,
+  "identity_markers": [],
+  "lastUpdate": null,
+  "last_activation": null,
+  "last_wander": {
+    "fragment": null,
+    "landed": false,
+    "seeded_by": null
+  },
+  "rest_duration_s": 0.5,
+  "self_model": {
+    "self_discrepancy": null
+  },
+  "self_model_updates": [],
+  "wander_stats": {
+    "landed": 0,
+    "last_pass_at": null,
+    "passes": 0
+  }
+}

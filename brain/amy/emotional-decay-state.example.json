@@ -1,0 +1,10 @@
+{
+  "baseline_valence": 0.5,
+  "decay_rate_per_hour": 0.5,
+  "description": null,
+  "lastUpdate": null,
+  "last_decay_run": null,
+  "log": [],
+  "system": null,
+  "valence": 0.5
+}

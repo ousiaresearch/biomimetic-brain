@@ -1,0 +1,36 @@
+{
+  "_seeded": {
+    "at": null,
+    "from": null,
+    "note": null,
+    "window": null
+  },
+  "_verified": {
+    "at": null,
+    "invariants": []
+  },
+  "concept_encounters": {
+    "days as litigants": 0,
+    "folded street outside": 0,
+    "inhabiting vs operating a body": 0,
+    "kettle": 0,
+    "tea": 0,
+    "the corridor": 0,
+    "the green door": 0,
+    "three passes": 0,
+    "unclaimed interval": 0,
+    "ungraded question": 0,
+    "white mug": 0,
+    "yellow late light": 0
+  },
+  "description": null,
+  "emerged_interests": [],
+  "lastUpdate": null,
+  "last_observed_motifs": {
+    "at": null,
+    "dream": null,
+    "present": []
+  },
+  "system": null,
+  "unresolved_interests": []
+}

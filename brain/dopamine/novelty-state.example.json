@@ -1,0 +1,15 @@
+{
+  "_verified": {
+    "at": null,
+    "invariants": []
+  },
+  "familiar_thresholds": {
+    "agent": 0,
+    "concept": 0,
+    "pattern": 0
+  },
+  "last_novel_encounter": null,
+  "last_updated": null,
+  "novelty_seeking": 0.5,
+  "vta_boost": 0.5
+}

@@ -1,0 +1,49 @@
+{
+  "description": null,
+  "last_updated": null,
+  "scenes": {
+    "the book": {
+      "canonical_image_path": null,
+      "description": null,
+      "dream_count": 0.5,
+      "emotional_signature": null,
+      "first_seen": null,
+      "image_count": 0.5,
+      "last_seen": null,
+      "name": null,
+      "recurrence_notes": null,
+      "variants": []
+    },
+    "the corridor": {
+      "canonical_image_path": null,
+      "description": null,
+      "dream_count": 0,
+      "emotional_signature": null,
+      "first_seen": null,
+      "image_count": 0,
+      "last_pov_rendered": null,
+      "last_seen": null,
+      "last_video_path": null,
+      "name": null,
+      "recurrence_notes": null,
+      "variants": [],
+      "video_count": 0.5
+    },
+    "the kitchen": {
+      "canonical_image_path": null,
+      "description": null,
+      "dream_count": 0,
+      "emotional_signature": null,
+      "first_seen": null,
+      "image_count": 0,
+      "last_pov_rendered": null,
+      "last_seen": null,
+      "last_video_path": null,
+      "name": null,
+      "recurrence_notes": null,
+      "variants": [],
+      "video_count": 0.5
+    }
+  },
+  "system": null
+}

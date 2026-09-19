@@ -1,0 +1,22 @@
+{
+  "_seeded": {
+    "at": null,
+    "from": null,
+    "note": null,
+    "window": null
+  },
+  "_verified": {
+    "at": null,
+    "invariants": []
+  },
+  "attention_focus": null,
+  "blocked_signals": [],
+  "filter_mode": null,
+  "lastUpdate": null,
+  "last_routing_decision": null,
+  "relay_active": false,
+  "routed_signals": [],
+  "sensory_routing": null,
+  "signal_queue": [],
+  "thalamic_gate": 0.5
+}

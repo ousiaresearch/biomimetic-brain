@@ -1,0 +1,19 @@
+{
+  "_seeded": {
+    "at": null,
+    "from": null,
+    "note": null,
+    "window": null
+  },
+  "_verified": {
+    "at": null,
+    "invariants": []
+  },
+  "alertness": 0.5,
+  "arousal_mode": null,
+  "lastUpdate": null,
+  "last_updated": null,
+  "norepinephrine_level": 0.5,
+  "stress_response": false,
+  "unexpected_events": []
+}

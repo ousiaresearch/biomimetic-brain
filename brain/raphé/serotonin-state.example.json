@@ -1,0 +1,22 @@
+{
+  "_seeded": {
+    "at": null,
+    "from": null,
+    "note": null,
+    "window": null
+  },
+  "components": {
+    "fatigue_suppression": 0.5,
+    "social": 0.5,
+    "valence": 0.5
+  },
+  "current_serotonin": 0.5,
+  "description": null,
+  "evidence": null,
+  "lastUpdate": null,
+  "last_evidence": null,
+  "patience_state": null,
+  "patience_threshold": 0.5,
+  "social_engagement": 0.5,
+  "system": null
+}

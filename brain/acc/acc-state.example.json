@@ -1,0 +1,29 @@
+{
+  "_seeded": {
+    "at": null,
+    "from": null,
+    "note": null,
+    "window": null
+  },
+  "_verified": {
+    "at": null,
+    "invariants": []
+  },
+  "conflict_detected": false,
+  "conflict_intensity": 0.5,
+  "conflict_sources": [],
+  "error_signals": [],
+  "lastUpdate": null,
+  "last_conflict": {
+    "at": null,
+    "source": null,
+    "state": null
+  },
+  "monitoring_active": false,
+  "resolution_state": null,
+  "self_exam_note": {
+    "at": null,
+    "note": null,
+    "withdrawn_entries": 0.5
+  }
+}

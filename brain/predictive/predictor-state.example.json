@@ -1,0 +1,40 @@
+{
+  "_seeded": {
+    "at": null,
+    "from": null,
+    "note": null,
+    "window": null
+  },
+  "_verified": {
+    "at": null,
+    "invariants": []
+  },
+  "calibration": {
+    "brier_score": 0.5,
+    "reading": null,
+    "resolved_cases": 0.5
+  },
+  "description": null,
+  "lastUpdate": null,
+  "predictions": {
+    "contextual": {
+      "description": null
+    },
+    "temporal": {
+      "description": null
+    }
+  },
+  "stats": {
+    "accuracy_rate": 0.5,
+    "brier_score": 0.5,
+    "matches": 0.5,
+    "method": null,
+    "mismatches": 0.5,
+    "open": 0.5,
+    "resolution_rate": 0.5,
+    "total_predictions": 0,
+    "unfalsifiable": 0,
+    "unresolved": 0
+  },
+  "system": null
+}

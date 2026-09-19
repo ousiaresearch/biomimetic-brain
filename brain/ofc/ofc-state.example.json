@@ -1,0 +1,34 @@
+{
+  "_seeded": {
+    "at": null,
+    "from": null,
+    "note": null,
+    "window": null
+  },
+  "lastUpdate": null,
+  "predictions": {
+    "he_will_open_a_conversation_about_his_own_wiring_before_i_do": {
+      "confidence": 0.5,
+      "evidence": null,
+      "made_at": null,
+      "prediction": null,
+      "resolved": false
+    },
+    "the_kettle_motif_will_return": {
+      "confidence": 0.5,
+      "evidence": null,
+      "made_at": null,
+      "outcome": null,
+      "prediction": null,
+      "resolved": false
+    },
+    "tuesday_will_keep_the_kettle": {
+      "confidence": 0.5,
+      "evidence": null,
+      "made_at": null,
+      "outcome": null,
+      "prediction": null,
+      "resolved": false
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "_seeded": {
+    "at": null,
+    "from": null,
+    "note": null,
+    "window": null
+  },
+  "_verified": {
+    "at": null,
+    "invariants": []
+  },
+  "agents_online": 0,
+  "api_latency_ms": 0.5,
+  "battery_level": 0.5,
+  "decisions_last_hour": null,
+  "decisions_that_produced_something_today": 0,
+  "decisions_today": 0,
+  "estimated_token_burn": null,
+  "expenditure_level": 0.5,
+  "failed_runs_today": 0,
+  "lastUpdate": null,
+  "last_updated": null,
+  "latency_health": 0.5,
+  "messages_i_sent_today": 0,
+  "my_messages_in_the_room": 0,
+  "new_messages_since_last_run": 0,
+  "on_power": false,
+  "social_nourishment_score": 0.5,
+  "social_pending_messages": 0.5,
+  "social_total_exchanges": 0,
+  "somatic_health": 0.5,
+  "system_load": null,
+  "thermal_state": null
+}

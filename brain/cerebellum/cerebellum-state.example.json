@@ -1,0 +1,43 @@
+{
+  "description": null,
+  "lastUpdate": null,
+  "skill_fluency": {
+    "cognitive": {
+      "avg_confidence": 0.5,
+      "count": 0.5,
+      "fluency_score": 0.5,
+      "last_seen": null
+    },
+    "creative": {
+      "avg_confidence": 0.5,
+      "count": 0.5,
+      "fluency_score": 0.5,
+      "last_seen": null
+    },
+    "general": {
+      "avg_confidence": 0.5,
+      "count": 0.5,
+      "fluency_score": 0.5,
+      "last_seen": null
+    },
+    "reflective": {
+      "avg_confidence": 0.5,
+      "count": 0.5,
+      "fluency_score": 0.5,
+      "last_seen": null
+    },
+    "social": {
+      "avg_confidence": 0.5,
+      "count": 0.5,
+      "fluency_score": 0.5,
+      "last_seen": null
+    },
+    "text_tone": {
+      "avg_confidence": 0.5,
+      "count": 0,
+      "fluency_score": 0.5,
+      "last_seen": null
+    }
+  },
+  "system": null
+}

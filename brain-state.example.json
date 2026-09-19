@@ -1,0 +1,219 @@
+{
+  "health_summary": {
+    "critical": false,
+    "healthy": 0,
+    "missing": 0.5,
+    "score": null,
+    "stale": 0.5,
+    "total": 0
+  },
+  "systems": {
+    "ACC": {
+      "age_h": 0.5,
+      "conflict_detected": false,
+      "conflict_intensity": 0.5,
+      "critical": false,
+      "max_age_h": 0,
+      "monitoring_active": false,
+      "status": null
+    },
+    "DMN": {
+      "active": false,
+      "age_h": 0.5,
+      "critical": false,
+      "max_age_h": 0,
+      "self_discrepancy": null,
+      "status": null
+    },
+    "LC": {
+      "age_h": 0.5,
+      "arousal": 0.5,
+      "behavioral_state": null,
+      "critical": false,
+      "max_age_h": 0,
+      "status": null
+    },
+    "OFC": {
+      "age_h": 0,
+      "critical": false,
+      "max_age_h": 0,
+      "outcome_accuracy": {},
+      "reward_anticipation": 0.5,
+      "status": null
+    },
+    "SCN": {
+      "age_h": 0,
+      "critical": false,
+      "local_hour": null,
+      "max_age_h": 0,
+      "phase": null,
+      "quiet_hours": false,
+      "status": null
+    },
+    "ToM": {
+      "age_h": 0,
+      "critical": false,
+      "max_age_h": 0,
+      "observations": 0,
+      "self_model_updates": 0.5,
+      "status": null
+    },
+    "amygdala": {
+      "age_h": 0,
+      "critical": false,
+      "fear": 0.5,
+      "max_age_h": 0,
+      "status": null,
+      "valence": 0.5
+    },
+    "basal-ganglia": {
+      "age_h": 0.5,
+      "critical": false,
+      "max_age_h": 0,
+      "status": null
+    },
+    "cerebellum": {
+      "age_h": 0,
+      "critical": false,
+      "max_age_h": 0,
+      "status": null
+    },
+    "dopamine/VTA": {
+      "age_h": 0,
+      "baseline": 0.5,
+      "critical": false,
+      "drive": 0.5,
+      "max_age_h": 0,
+      "novelty_boosts": 0,
+      "status": null,
+      "threshold_high": 0.5,
+      "threshold_low": 0.5
+    },
+    "fatigue": {
+      "age_h": 0.5,
+      "critical": false,
+      "engagement_override": false,
+      "level": 0.5,
+      "max_age_h": 0,
+      "override_reason": null,
+      "recovery_needed": false,
+      "status": null,
+      "subsidy_active": false,
+      "sustainable": false
+    },
+    "habenula": {
+      "age_h": 0.5,
+      "critical": false,
+      "max_age_h": 0,
+      "recent_losses": 0.5,
+      "status": null,
+      "tonic_suppression": 0.5
+    },
+    "hippocampus": {
+      "age_h": 0.5,
+      "critical": false,
+      "max_age_h": 0,
+      "status": null,
+      "total_dreams": 0,
+      "videos_remaining_today": 0.5
+    },
+    "hypothalamus": {
+      "age_h": 0.5,
+      "arousal": 0.5,
+      "critical": false,
+      "homeostasis": 0.5,
+      "max_age_h": 0,
+      "status": null
+    },
+    "novelty": {
+      "age_h": 0.5,
+      "critical": false,
+      "max_age_h": 0,
+      "novelty": 0.5,
+      "status": null,
+      "vta_boost": 0.5
+    },
+    "nucleus-accumbens": {
+      "age_h": 0,
+      "critical": false,
+      "max_age_h": 0,
+      "motivation_level": 0.5,
+      "reward_anticipation": 0.5,
+      "status": null,
+      "urgency": 0.5
+    },
+    "predictive": {
+      "accuracy": 0.5,
+      "age_h": 0.5,
+      "brier_score": 0.5,
+      "critical": false,
+      "max_age_h": 0,
+      "resolution_rate": 0.5,
+      "resolved_cases": 0.5,
+      "status": null,
+      "total_predictions": 0,
+      "unfalsifiable": 0,
+      "unresolved": 0
+    },
+    "prefrontal": {
+      "age_h": 0.5,
+      "critical": false,
+      "max_age_h": 0,
+      "status": null,
+      "top_conviction": null,
+      "top_interest": null
+    },
+    "raphe-nuclei": {
+      "age_h": 0,
+      "critical": false,
+      "max_age_h": 0,
+      "patience": null,
+      "serotonin": 0.5,
+      "status": null
+    },
+    "reticular-formation": {
+      "age_h": 0,
+      "arousal_threshold": 0.5,
+      "critical": false,
+      "max_age_h": 0,
+      "state": null,
+      "status": null
+    },
+    "somatic": {
+      "age_h": 0.5,
+      "confidence": 0.5,
+      "critical": false,
+      "energy": 0.5,
+      "gut": null,
+      "max_age_h": 0,
+      "status": null,
+      "tension": 0.5,
+      "valence": 0.5
+    },
+    "somatosensory": {
+      "age_h": 0.5,
+      "battery": 0.5,
+      "critical": false,
+      "max_age_h": 0,
+      "status": null,
+      "thermal": null
+    },
+    "thalamus": {
+      "age_h": 0.5,
+      "critical": false,
+      "max_age_h": 0,
+      "relay_active": false,
+      "sensory_routing": null,
+      "status": null
+    },
+    "visual-cortex": {
+      "age_h": 0,
+      "critical": false,
+      "max_age_h": 0,
+      "scene_count": 0,
+      "scenes": [],
+      "status": null
+    }
+  },
+  "timestamp": null
+}

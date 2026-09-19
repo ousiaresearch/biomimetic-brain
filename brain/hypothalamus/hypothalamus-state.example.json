@@ -1,0 +1,31 @@
+{
+  "_seeded": {
+    "at": null,
+    "from": null,
+    "note": null,
+    "window": null
+  },
+  "_verified": {
+    "at": null,
+    "invariants": []
+  },
+  "arousal": 0.5,
+  "arousal_level": 0.5,
+  "drive_state": null,
+  "drives": {
+    "autonomy": {
+      "evidence": null,
+      "level": 0.5
+    },
+    "curiosity": {
+      "evidence": null,
+      "level": 0.5
+    },
+    "social": {
+      "evidence": null,
+      "level": 0.5
+    }
+  },
+  "lastUpdate": null,
+  "zeitgeber_count": 0
+}

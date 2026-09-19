@@ -1,0 +1,19 @@
+{
+  "_verified": {
+    "at": null,
+    "invariants": []
+  },
+  "arousal": 0.5,
+  "confidence": 0.5,
+  "decision_weights": {
+    "gut_override": 0.5,
+    "logic_weight": 0.5
+  },
+  "energy": 0.5,
+  "gut_feeling": null,
+  "lastUpdate": null,
+  "last_updated": null,
+  "phase_signal": null,
+  "tension": 0.5,
+  "valence": 0.5
+}

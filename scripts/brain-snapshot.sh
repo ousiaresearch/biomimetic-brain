@@ -4,9 +4,9 @@
 # These are the live signal sources used by the decision gate.
 set -euo pipefail
 
-BRAIN="$HOME/.hermes/agents/palantir/brain"
-OUT="$HOME/.hermes/agents/palantir/brain-state.json"
-SCRIPT_DIR="$HOME/.hermes/agents/palantir/scripts"
+BRAIN="$WORKSPACE/brain"
+OUT="$WORKSPACE/brain-state.json"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # 1. Generate the canonical 22-system brain-state.json from all subsystem files.
 #    This is the authoritative source for the decision gate.

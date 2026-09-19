@@ -1,15 +1,22 @@
 #!/usr/bin/env python3
 """
 generate-brain-state.py
-Reads all 22 biomimetic subsystem files and generates the canonical brain-state.json.
-This is the authoritative source for the decision gate.
-Called by brain-snapshot.sh every 4h.
-"""
-import json, os, glob
-from datetime import datetime, timezone
+Reads every subsystem state file under <agent-dir>/brain and writes the canonical
+brain-state.json. This aggregate is the single source the decision gate and the
+conversation-side kit read.
 
-BRAIN = os.path.expanduser("~/.hermes/agents/palantir/brain")
-OUT   = os.path.expanduser("~/.hermes/agents/palantir/brain-state.json")
+    MIND_AGENT_DIR=/path/to/agent python3 generate-brain-state.py
+
+Called by brain-snapshot.sh on a schedule.
+"""
+import json, os, glob, sys
+from datetime import datetime, timezone
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _agent_path import agent_dir
+
+AGENT = agent_dir()
+BRAIN = str(AGENT / "brain")
+OUT   = str(AGENT / "brain-state.json")
 
 def age_h(path: str) -> float:
     """Hours since file was last modified."""
@@ -337,7 +344,15 @@ def main():
     systems["predictive"] = {
         "status": status(a, 48),
         "accuracy": round(acc, 3) if acc else 0,
-        "total_predictions": len(d.get("predictions", {})),
+        # Prefer the scored ledger's own count over the structural dict, which only holds
+        # the temporal/contextual buckets and therefore always read as "2".
+        "total_predictions": d.get("stats", {}).get("total_predictions",
+                                                     len(d.get("predictions", {}))),
+        "resolved_cases": d.get("stats", {}).get("matches", 0) + d.get("stats", {}).get("mismatches", 0),
+        "unresolved": d.get("stats", {}).get("unresolved", 0),
+        "unfalsifiable": d.get("stats", {}).get("unfalsifiable", 0),
+        "resolution_rate": d.get("stats", {}).get("resolution_rate"),
+        "brier_score": d.get("stats", {}).get("brier_score"),
         "age_h": round(a, 2),
         "max_age_h": 48,
         "critical": acc < 0.3
@@ -375,6 +390,46 @@ def main():
         "critical": False
     }
 
+    # ── 23. Visual Cortex (dream imagery memory) ─────────────────────────
+    p = os.path.join(BRAIN, "visual/visual-state.json")
+    d = read_json(p)
+    a = last_updated_h(p)
+    scenes = d.get("scenes", {})
+    systems["visual-cortex"] = {
+        "status": status(a, 168) if os.path.exists(p) else "missing",
+        "scene_count": len(scenes),
+        "scenes": list(scenes.keys()),
+        "age_h": round(a, 2) if os.path.exists(p) else 999,
+        "max_age_h": 168,
+        "critical": False
+    }
+
+    # ── 24. Habenula (anti-reward / disappointment) ──────────────────────
+    p = os.path.join(BRAIN, "habenula/habenula-state.json")
+    d = read_json(p)
+    a = last_updated_h(p)
+    systems["habenula"] = {
+        "status": status(a, 168) if os.path.exists(p) else "missing",
+        "tonic_suppression": d.get("tonic_suppression", "?"),
+        "recent_losses": len(d.get("recent_losses", [])),
+        "age_h": round(a, 2) if os.path.exists(p) else 999,
+        "max_age_h": 168,
+        "critical": False
+    }
+
+    # ── 25. Reticular Formation (wake/sleep threshold) ───────────────────
+    p = os.path.join(BRAIN, "reticular/reticular-state.json")
+    d = read_json(p)
+    a = last_updated_h(p)
+    systems["reticular-formation"] = {
+        "status": status(a, 24) if os.path.exists(p) else "missing",
+        "state": d.get("state", "?"),
+        "arousal_threshold": d.get("arousal_threshold", "?"),
+        "age_h": round(a, 2) if os.path.exists(p) else 999,
+        "max_age_h": 24,
+        "critical": False
+    }
+
     # ── Summary ───────────────────────────────────────────────────────────
     healthy = sum(1 for s in systems.values() if s["status"] == "active")
     stale   = sum(1 for s in systems.values() if s["status"] == "stale")
@@ -383,8 +438,7 @@ def main():
 
     result = {
         "timestamp": now,
-        "migration": "OpenClaw → Hermes, 2026-04-27. Identity clarified: Palantir, not Arien.",
-        "generated_by": "generate-brain-state.py — reads all 22 subsystem files",
+                "generated_by": "generate-brain-state.py — reads all 25 subsystem files",
         "health_summary": {
             "score": f"{round(healthy/len(systems)*100)}%",
             "healthy": healthy,

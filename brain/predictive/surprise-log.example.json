@@ -1,0 +1,21 @@
+{
+  "_seeded": {
+    "at": null,
+    "from": null,
+    "note": null,
+    "window": null
+  },
+  "description": null,
+  "lastUpdate": null,
+  "predictions": {},
+  "stats": {
+    "accuracy_rate": 0.5,
+    "brier_score": 0.5,
+    "matches": 0.5,
+    "mismatches": 0.5,
+    "unfalsifiable": 0,
+    "unresolved": 0
+  },
+  "surprises": [],
+  "system": null
+}

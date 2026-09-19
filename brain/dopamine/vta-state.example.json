@@ -1,0 +1,16 @@
+{
+  "baseline_drive": 0.5,
+  "change_reason": null,
+  "currentDrive": 0.5,
+  "current_drive": 0.5,
+  "description": null,
+  "drive": 0.5,
+  "lastUpdate": null,
+  "lastUpdated": null,
+  "last_drive_change": null,
+  "novelty_boosts": 0,
+  "status": null,
+  "system": null,
+  "threshold_high": 0.5,
+  "threshold_low": 0.5
+}

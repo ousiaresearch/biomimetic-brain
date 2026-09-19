@@ -1,0 +1,39 @@
+{
+  "_seeded": {
+    "at": null,
+    "from": null,
+    "note": null,
+    "window": null
+  },
+  "action_values": {
+    "fix_the_wiring_between_brain_and_conversation": {
+      "evidence": null,
+      "value": 0.5
+    },
+    "hold_a_question_open_without_grading_it": {
+      "evidence": null,
+      "value": 0.5
+    },
+    "publish_under_acs": {
+      "evidence": null,
+      "value": 0.5
+    },
+    "send_first_message": {
+      "evidence": null,
+      "value": 0.5
+    }
+  },
+  "lastUpdate": null,
+  "last_reward_predicted": {
+    "action": null,
+    "at": null,
+    "evidence": null,
+    "observed": null,
+    "predicted_reward": 0.5
+  },
+  "last_update": null,
+  "motivation_level": 0.5,
+  "reward_anticipation": 0.5,
+  "reward_prediction_error": 0.5,
+  "wanting_signals": []
+}

@@ -1,0 +1,29 @@
+{
+  "_seeded": {
+    "at": null,
+    "from": null,
+    "note": null,
+    "window": null
+  },
+  "_verified": {
+    "at": null,
+    "invariants": []
+  },
+  "lastUpdate": null,
+  "recurring_motifs": {
+    "corridor": 0,
+    "door": 0,
+    "light": 0.5,
+    "room": 0,
+    "window": 0
+  },
+  "replay_queue": [],
+  "scene_memory": {
+    "the corridor": null,
+    "the kitchen": null
+  },
+  "stats": {
+    "total_dreams": 0,
+    "videos_remaining_today": 0.5
+  }
+}
