@@ -2,13 +2,14 @@
 
 Presence is not the same as working. This kit is easy to install and easy to leave inert, so the checks below are the point of the kit rather than an afterthought.
 
-## The one command
+## The two commands
 
 ```bash
-python3 scripts/self_test.py
+python3 scripts/self_test.py           # the kit installs, runs, and does not lie about it
+python3 scripts/decision-gate_test.py  # the gate's rule set, one assertion per rule
 ```
 
-It builds a throwaway agent directory from the shipped examples, runs the shipped generator against it, and asserts what the kit claims. Expected output, on a healthy tree:
+`self_test.py` builds a throwaway agent directory from the shipped examples, runs the shipped generator against it, and asserts what the kit claims. `decision-gate_test.py` builds synthetic states and asserts the **exact reason code** for every rule in `docs/DECISION_GATE.md` — 136 checks over 27 codes. A rule with no assertion beside it is not implemented. Expected `self_test.py` output, on a healthy tree:
 
 ```
   PASS  seeded 37 subsystem files from examples (expect >= 25)

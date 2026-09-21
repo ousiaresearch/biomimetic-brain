@@ -21,7 +21,7 @@ somatic + fatigue + circadian + motivation + attention
 - **Staleness you can trust.** Every reading carries how old it is and how old it is allowed to be. A subsystem that has gone quiet reads as `stale` instead of quietly lying to you.
 - **Fatigue that is not a light switch.** Recovery accumulates while your agent works, and an engagement override can *suspend* fatigue without erasing it. The override is recorded as an override, so you can see when the caffeine kicked in.
 - **The four passes that keep it honest.** Snapshot, maintenance, consistency check, and a consolidation pass that folds what actually happened back into state. A state file nothing updates ages into fiction; this is the part that stops that.
-- **A decision gate.** PROCEED, CAUTION, or VETO, from named inputs, so a refusal can be traced to the numbers that caused it rather than to a mood.
+- **A decision gate.** `scripts/decision-gate.py` returns PROCEED, CAUTION, or VETO from named inputs — 26 reason codes, exit `0`/`1`/`2` — so a refusal can be traced to the numbers that caused it rather than to a mood. It is **read-only**: gating a decision never mutates the state that produced it, and every value it had to default because a file was absent is reported as a default rather than passed off as a reading.
 - **A self-test.** It builds a throwaway agent from scratch and proves the whole thing runs, so you are not trusting a README that has never executed.
 
 ## Install in five minutes
@@ -62,6 +62,8 @@ scripts/consolidate-mind.py       folds evidence back into state on a schedule
 scripts/brain-maintenance.sh      maintenance and consistency pass
 scripts/brain-snapshot.sh         snapshot + aggregate on a schedule
 scripts/self_test.py              builds a neutral agent and checks the kit actually runs
+scripts/decision-gate.py          PROCEED / CAUTION / VETO from the subsystem files (read-only)
+scripts/decision-gate_test.py     asserts the exact reason code for every documented rule
 docs/                       architecture, decision gate, predictive processing
 SETUP-GUIDE.md              install, step by step
 VALIDATION.md               how to prove it works, and how a passing install can still be inert

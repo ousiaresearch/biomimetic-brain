@@ -1,5 +1,89 @@
 # Biomimetic Decision Gate — Integration Status
 
+## Shipped implementation (2026-09-21)
+
+Until this date the gate below was **specification only** — `grep -rln "PROCEED\|VETO" --include=*.py`
+over this kit returned nothing, so the feature the README leads with could not be run by anyone who
+adopted the kit. It now ships as two files:
+
+```bash
+python3 scripts/decision-gate.py "<decision label>" [mode]   # one JSON object on stdout
+python3 scripts/decision-gate_test.py                        # 136 checks, every rule asserted
+```
+
+Exit codes: **0** PROCEED · **1** VETO · **2** CAUTION. `mode` is `standard|low_scope|minimal|essential`
+(only `essential` changes behaviour — it bypasses quiet hours; see "Resolved ambiguities" below).
+The gate is **read-only**: it writes nothing, so gating a decision never mutates the state that
+produced it. It reads the per-subsystem files named in the table further down, not the aggregate.
+
+Test seams: `MIND_NOW=HH:MM` pins the local clock and `MIND_TZ=Area/City` pins the zone, because the
+quiet-hours rules read the wall clock and a test that cannot pin the clock cannot assert them.
+
+### Reason codes — the full contract
+
+The v4 rule set below names most of these. Everything the gate can emit is listed here, including the
+codes the rule set left unnamed:
+
+**VETO** — `veto_recovery`, `veto_fatigue`, `veto_low_arousal`, `veto_recovery_state`, `veto_gut_stop`,
+`veto_distracted_pause`, `veto_distracted_doubt`, `veto_pause_energy`, `veto_doubt_confidence`,
+`veto_quiet_gut`
+
+**Habit bypass** — `proceed_habit_gut_stop`, `proceed_habit_gut_pause`, `proceed_habit_gut_doubt`
+*(these three names are new; the rule set said only "PROCEED (habit override)")*
+
+**PROCEED extended** — `proceed_passion`, `proceed_conviction`, `proceed_curiosity_extended`,
+`proceed_extended_surge`, `proceed_novelty_extended`, `proceed_vta_extended`
+
+**CAUTION** — `caution_distracted`, `caution_gut`, `caution_doubt`, `caution_fatigue`,
+`caution_low_arousal`, `caution_tension`, `caution_quiet_hours`
+
+**Default** — `proceed` (no gate signal fired)
+
+### Resolved ambiguities
+
+The rule set as written does not determine all of its own outcomes. Where it was silent, the
+implementation chose as follows — these are the decisions a reader needs in order to predict output:
+
+1. **Where the habit bypass sits.** The rule set says "before gut-based veto". Implemented as: the
+   four non-gut vetoes (`recovery`, `fatigue`, `low_arousal`, `recovery_state`) are evaluated first, so
+   **a habit cannot override a physical veto**; the bypass then precedes the gut-derived vetoes.
+2. **Quiet hours vs PROCEED extended.** The rule set places `veto_quiet_gut` in VETO and PROCEED
+   extended "right after VETO, before caution", so a high-novelty signal **cannot** rescue a
+   quiet-hour gut veto. Documented order implemented.
+3. **Quiet hours within CAUTION.** `caution_quiet_hours` is printed last in the CAUTION block and
+   therefore **loses to any earlier caution rule** (quiet hours + `gut=wait` reports `caution_gut`).
+4. **Interests are counted as they stand.** The rule set says `emergent_interests > 0` and names raw
+   lists, so no status/urgency filter is applied, unlike `active_passions`/`active_convictions` whose
+   names carry the filter.
+5. **Modes.** Only `essential` has documented behaviour (bypass quiet hours). `low_scope` and
+   `minimal` are reported but change no rule; an unknown mode warns and runs `standard`.
+6. **Clock and zone.** The original notes hardcode NY/EST. A neutral kit cannot name a zone, so the
+   machine's local clock is used, with `MIND_TZ` as an override; the zone and the quiet-hours source
+   (`scn` | `real_clock` | `default`) appear in the output.
+7. **A null `gut_feeling` is `neutral`**, never a value named `None` — every shipped example has
+   `gut_feeling: null`, so a null must not be able to match `stop`/`pause`/`doubt`.
+8. **Defaults for absent inputs** are neutral (`gut=neutral`, `energy/confidence/novelty=0.5`,
+   `fatigue/tension=0.0`, `arousal=0.5`, `vta=0.57` to match `generate-brain-state.py`, surprise
+   accuracy `0.5`, no habits, no interests), so an unseeded agent reads `proceed` — and **every default
+   is reported per file** in `real_readings` / `defaulted_readings`, so a verdict built on a default is
+   visibly built on one.
+9. **Signals in the v11–v13 list further down** (ACC, DMN, OFC, NAc, ToM, cerebellum, LC, serotonin,
+   somatosensory) are **not gated** by this implementation; it implements the v4 rule set. Several of
+   their keys do not exist in the shipped examples. `engagement_override` and `subsidy_active` are read
+   and reported under `read_not_gated` — visible in the output, influencing no verdict.
+
+### Where this implementation follows the docs over the reference
+
+The deployed copy of this architecture implements a later (v14) gate. Where the two disagree, this
+kit follows `docs/DECISION_GATE.md`, on the principle that a kit must implement what it publishes:
+the docs' `caution_doubt` requires `adj_conf >= 0.40` (the reference ignores `adj_conf`); the docs
+require a drift warning when the SCN contradicts the clock (the reference falls back silently); the
+docs' surprise formula is ±0.15 (the reference's comment claims −0.2/+0.1); and the docs place quiet
+hours inside VETO rather than after extended scope. The reference's `caution_override_curiosity` and
+its `caution_fatigue_override`/`caution_fatigue_subsidy` codes are non-spec and are not ported.
+
+---
+
 > **Note on this copy.** These notes were written for the published 22-subsystem build.
 > The shipped topology is 25 subsystems; `NOTES.md` and `brain/README.md` carry the delta.
 > Script names that appear here are the authors' originals; where a name is prefixed `mind-`
