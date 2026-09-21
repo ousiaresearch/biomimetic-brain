@@ -34,7 +34,7 @@ The kit ships `brain/<subsystem>/<name>.example.json` — the key structure, wit
 ```bash
 cd ousia-mind-kit
 for f in $(find brain -name '*.example.json'); do
-  dest="$MIND_AGENT_DIR/${f#brain/}"; dest="${dest/.example/}"
+  dest="$MIND_AGENT_DIR/brain/${f#brain/}"; dest="${dest/.example/}"
   mkdir -p "$(dirname "$dest")"
   cp "$f" "$dest"
 done

@@ -18,11 +18,14 @@ It builds a throwaway agent directory from the shipped examples, runs the shippe
   PASS  every system block carries age_h + max_age_h (25/25)
   PASS  generated aggregate carries no identity residue
   PASS  generator wrote into $MIND_AGENT_DIR, not into the kit
+  PASS  README carries a runnable bash install block
+  PASS  the README's own install block yields 25/25 healthy (rc=0)
+  PASS  SHA256SUMS verifies (54/54 entries)
 
-7/7 checks passed
+10/10 checks passed
 ```
 
-The last two are the ones that matter to anyone adopting this from someone else's tree: the kit must run on a neutral agent, and it must not carry the original agent's readings or paths along with it.
+Checks 7 and 8 exist because the kit shipped without them: an install block that nothing executed, and a checksum manifest that nothing verified. Checks 5 and 6 are the ones that matter to anyone adopting this from someone else's tree: the kit must run on a neutral agent, and it must not carry the original agent's readings or paths along with it.
 
 ## What each check is really testing
 
@@ -35,6 +38,8 @@ The last two are the ones that matter to anyone adopting this from someone else'
 | `age_h` + `max_age_h` on every block | A copy of this kit where staleness was dropped, so an old number reads as a current one |
 | No identity residue | A kit shipped with its author's readings, names or machine paths still inside it |
 | Wrote into `$MIND_AGENT_DIR` | A generator that hardcodes a path from the tree it came from |
+| The README's install block runs | Install instructions that seed a tree the kit cannot read — the defect shipped in `6b4bed3`, where the documented loop dropped the `brain/` component and a stranger following the docs got **0/25 healthy** while this test stayed green |
+| `SHA256SUMS` verifies | A published checksum manifest that has drifted from the tree it describes, or that lists itself — an entry no file can ever satisfy |
 
 ## Manual checks worth doing once
 
