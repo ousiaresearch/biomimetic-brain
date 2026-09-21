@@ -35,7 +35,7 @@ for f in $(find brain -name '*.example.json'); do
   mkdir -p "$(dirname "$dest")"; cp "$f" "$dest"
 done
 python3 scripts/generate-brain-state.py       # writes $MIND_AGENT_DIR/brain-state.json
-python3 scripts/self_test.py                  # 10 checks, expect all green
+python3 scripts/self_test.py                  # 11 checks, expect all green
 ```
 
 Then read [SETUP-GUIDE.md](SETUP-GUIDE.md), which walks a human and their agent through it in the order it has to happen — including the part that cannot be automated: giving the files values that are actually true.

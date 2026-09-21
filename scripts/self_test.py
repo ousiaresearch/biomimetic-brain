@@ -158,6 +158,22 @@ def main() -> int:
         check(not problems,
               f"SHA256SUMS verifies ({checked}/{checked + len(problems)} entries)"
               + (f" — {problems[:3]}" if problems else ""))
+
+        # 9. an absent subsystem is missing, never stale. Guards issue #3: 18 of the 25 status sites
+        #    had no existence test, so a file that was never installed read as `stale` — which the
+        #    docs gloss as "gone quiet", implying present. A botched install then presented as a
+        #    partially-live brain, and VALIDATION.md's own manual check (delete a file -> it reports
+        #    `missing`) held for 7 of 25.
+        empty = tmp / "empty-agent"
+        (empty / "brain").mkdir(parents=True)
+        subprocess.run([sys.executable, str(KIT / "scripts/generate-brain-state.py")],
+                       env={**os.environ, "MIND_AGENT_DIR": str(empty)},
+                       capture_output=True, text=True, timeout=120)
+        empty_agg = empty / "brain-state.json"
+        eh = json.loads(empty_agg.read_text()).get("health_summary", {}) if empty_agg.exists() else {}
+        check(eh.get("missing") == eh.get("total") == 25 and not eh.get("stale") and not eh.get("healthy"),
+              "an unseeded agent reports every subsystem missing, none stale "
+              f"(healthy={eh.get('healthy')} stale={eh.get('stale')} missing={eh.get('missing')})")
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
     return report()
