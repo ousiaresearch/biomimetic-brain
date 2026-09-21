@@ -43,6 +43,18 @@ def status(age: float, max_age: float) -> str:
     if age <= max_age: return "active"
     return "stale"
 
+def status_for(path, age: float, max_age: float) -> str:
+    """Existence before age: an absent subsystem is ``missing``, never ``stale``.
+
+    Only 7 of the 25 sites here used to test for file existence, so a file that was never installed —
+    or was deleted — read as ``stale``, which the docs gloss as "gone quiet": present but quiet. A
+    health summary whose reader cannot tell an absent subsystem from a silent one is not a gauge.
+    """
+    if not path or not os.path.exists(path):
+        return "missing"
+    return status(age, max_age)
+
+
 def read_json(path: str):
     try:
         with open(path) as f:
@@ -59,7 +71,7 @@ def main():
     d = read_json(p)
     a = last_updated_h(p)
     systems["somatic"] = {
-        "status": status(a, 8),
+        "status": status_for(p, a, 8),
         "gut": d.get("gut_feeling", "unknown"),
         "energy": d.get("energy", 0),
         "valence": d.get("valence", 0.5),
@@ -75,7 +87,7 @@ def main():
     d = read_json(p)
     a = last_updated_h(p)
     systems["fatigue"] = {
-        "status": status(a, 24),
+        "status": status_for(p, a, 24),
         "level": d.get("fatigue_level", 0),
         "recovery_needed": d.get("recovery_needed", False),
         "sustainable": d.get("sustainable", True),
@@ -92,7 +104,7 @@ def main():
     d = read_json(p)
     a = last_updated_h(p)
     systems["dopamine/VTA"] = {
-        "status": status(a, 24),
+        "status": status_for(p, a, 24),
         "drive": d.get("current_drive", d.get("currentDrive", 0.57)),
         "baseline": d.get("baseline_drive", 0.57),
         "threshold_high": d.get("threshold_high", 0.7),
@@ -108,7 +120,7 @@ def main():
     d = read_json(p)
     a = last_updated_h(p)
     systems["novelty"] = {
-        "status": status(a, 24),
+        "status": status_for(p, a, 24),
         "novelty": d.get("novelty_seeking", 0.5),
         "vta_boost": d.get("vta_boost", 0),
         "age_h": round(a, 2),
@@ -121,7 +133,7 @@ def main():
     d = read_json(p)
     a = last_updated_h(p)
     systems["SCN"] = {
-        "status": status(a, 24),
+        "status": status_for(p, a, 24),
         "phase": d.get("phase", "unknown"),
         "quiet_hours": d.get("quiet_hours", False),
         "local_hour": d.get("localHour", "?"),
@@ -135,7 +147,7 @@ def main():
     d = read_json(p)
     a = last_updated_h(p)
     systems["LC"] = {
-        "status": status(a, 24),
+        "status": status_for(p, a, 24),
         "arousal": d.get("current_arousal", 0),
         "behavioral_state": d.get("behavioral_state", "unknown"),
         "age_h": round(a, 2),
@@ -148,7 +160,7 @@ def main():
     d = read_json(p)
     a = last_updated_h(p)
     systems["amygdala"] = {
-        "status": status(a, 24),
+        "status": status_for(p, a, 24),
         "valence": d.get("valence", 0.5),
         "fear": d.get("fear", 0),
         "age_h": round(a, 2),
@@ -164,7 +176,7 @@ def main():
     convictions = d.get("convictions", [])
     passions = d.get("passions", [])
     systems["prefrontal"] = {
-        "status": status(a, 48),
+        "status": status_for(p, a, 48),
         "interests": len(emerged),
         "convictions": len(convictions),
         "passions": len(passions),
@@ -180,7 +192,7 @@ def main():
     d = read_json(p)
     a = last_updated_h(p)
     systems["ACC"] = {
-        "status": status(a, 48),
+        "status": status_for(p, a, 48),
         "conflict_detected": d.get("conflict_detected", False),
         "conflict_intensity": d.get("conflict_intensity", 0),
         "monitoring_active": d.get("monitoring_active", False),
@@ -194,7 +206,7 @@ def main():
     d = read_json(p)
     a = last_updated_h(p)
     systems["basal-ganglia"] = {
-        "status": status(a, 168),
+        "status": status_for(p, a, 168),
         "habits": len(d.get("habits", [])),
         "patterns": len(d.get("patterns", {})),
         "age_h": round(a, 2),
@@ -209,7 +221,7 @@ def main():
     d = read_json(p)
     a = last_updated_h(p)
     systems["cerebellum"] = {
-        "status": status(a, 168),
+        "status": status_for(p, a, 168),
         "procedural": len(d.get("procedural_habits", [])),
         "age_h": round(a, 2),
         "max_age_h": 168,
@@ -223,7 +235,7 @@ def main():
     d = read_json(p)
     a = last_updated_h(p)
     systems["hypothalamus"] = {
-        "status": status(a, 24),
+        "status": status_for(p, a, 24),
         "arousal": d.get("arousal_level", d.get("arousal", 0)),
         "homeostasis": d.get("homeostasis_offset", 0),
         "age_h": round(a, 2),
@@ -237,7 +249,7 @@ def main():
     a = last_updated_h(p)
     stats = d.get("stats", {})
     systems["hippocampus"] = {
-        "status": status(a, 48),
+        "status": status_for(p, a, 48),
         "total_dreams": stats.get("total_dreams", 0),
         "videos_remaining_today": stats.get("videos_remaining_today", 0),
         "age_h": round(a, 2),
@@ -250,7 +262,7 @@ def main():
     d = read_json(p)
     a = last_updated_h(p)
     systems["thalamus"] = {
-        "status": status(a, 48) if os.path.exists(p) else "missing",
+        "status": status_for(p, a, 48),
         "relay_active": d.get("relay_active", False),
         "sensory_routing": d.get("sensory_routing", "unknown"),
         "age_h": round(a, 2) if os.path.exists(p) else 999,
@@ -264,7 +276,7 @@ def main():
     a = last_updated_h(p)
     sm = d.get("self_model", {})
     systems["DMN"] = {
-        "status": status(a, 48),
+        "status": status_for(p, a, 48),
         "active": d.get("active", False),
         "self_narrative": d.get("self_narrative", "")[:120],
         "core_traits": sm.get("core_traits", [])[:5],
@@ -279,7 +291,7 @@ def main():
     d = read_json(p)
     a = last_updated_h(p)
     systems["OFC"] = {
-        "status": status(a, 48),
+        "status": status_for(p, a, 48),
         "reward_anticipation": d.get("reward_anticipation", 0),
         "outcome_accuracy": d.get("accuracy_by_domain", {}),
         "age_h": round(a, 2),
@@ -292,7 +304,7 @@ def main():
     d = read_json(p)
     a = last_updated_h(p)
     systems["nucleus-accumbens"] = {
-        "status": status(a, 24),
+        "status": status_for(p, a, 24),
         "urgency": d.get("current_urgency", 0),
         "motivation_level": d.get("motivation_level", 0),
         "reward_anticipation": d.get("reward_anticipation", 0),
@@ -306,7 +318,7 @@ def main():
     d = read_json(p)
     a = last_updated_h(p)
     systems["somatosensory"] = {
-        "status": status(a, 24) if os.path.exists(p) else "missing",
+        "status": status_for(p, a, 24),
         "battery": d.get("battery_level", "?"),
         "thermal": d.get("thermal_state", "?"),
         "age_h": round(a, 2) if os.path.exists(p) else 999,
@@ -321,7 +333,7 @@ def main():
     vals = d.get("values", {})
     top = list(vals.keys())[0] if vals else "none"
     systems["values"] = {
-        "status": status(a, 168),
+        "status": status_for(p, a, 168),
         "top_value": top,
         "total_values": len(vals),
         "age_h": round(a, 2),
@@ -342,7 +354,7 @@ def main():
         else:
             acc = 0
     systems["predictive"] = {
-        "status": status(a, 48),
+        "status": status_for(p, a, 48),
         "accuracy": round(acc, 3) if acc else 0,
         # Prefer the scored ledger's own count over the structural dict, which only holds
         # the temporal/contextual buckets and therefore always read as "2".
@@ -363,7 +375,7 @@ def main():
     d = read_json(tom_path)
     a = last_updated_h(tom_path)
     systems["ToM"] = {
-        "status": status(a, 48) if os.path.exists(tom_path) else "missing",
+        "status": status_for(tom_path, a, 48),
         "observations": len(d.get("observations", [])),
         "self_model_updates": len(d.get("self_model_updates", [])),
         "age_h": round(a, 2) if os.path.exists(tom_path) else 999,
@@ -382,7 +394,7 @@ def main():
     d = read_json(p) if p and os.path.exists(p) else {}
     a = last_updated_h(p) if p and os.path.exists(p) else 999
     systems["raphe-nuclei"] = {
-        "status": status(a, 48) if p and os.path.exists(p) else "missing",
+        "status": status_for(p, a, 48),
         "serotonin": d.get("current_serotonin", d.get("level", "?")),
         "patience": d.get("patience_state", "?"),
         "age_h": round(a, 2),
@@ -396,7 +408,7 @@ def main():
     a = last_updated_h(p)
     scenes = d.get("scenes", {})
     systems["visual-cortex"] = {
-        "status": status(a, 168) if os.path.exists(p) else "missing",
+        "status": status_for(p, a, 168),
         "scene_count": len(scenes),
         "scenes": list(scenes.keys()),
         "age_h": round(a, 2) if os.path.exists(p) else 999,
@@ -409,7 +421,7 @@ def main():
     d = read_json(p)
     a = last_updated_h(p)
     systems["habenula"] = {
-        "status": status(a, 168) if os.path.exists(p) else "missing",
+        "status": status_for(p, a, 168),
         "tonic_suppression": d.get("tonic_suppression", "?"),
         "recent_losses": len(d.get("recent_losses", [])),
         "age_h": round(a, 2) if os.path.exists(p) else 999,
@@ -422,7 +434,7 @@ def main():
     d = read_json(p)
     a = last_updated_h(p)
     systems["reticular-formation"] = {
-        "status": status(a, 24) if os.path.exists(p) else "missing",
+        "status": status_for(p, a, 24),
         "state": d.get("state", "?"),
         "arousal_threshold": d.get("arousal_threshold", "?"),
         "age_h": round(a, 2) if os.path.exists(p) else 999,
