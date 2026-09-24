@@ -40,6 +40,17 @@ python3 scripts/self_test.py                  # 11 checks, expect all green
 
 Then read [SETUP-GUIDE.md](SETUP-GUIDE.md), which walks a human and their agent through it in the order it has to happen — including the part that cannot be automated: giving the files values that are actually true.
 
+## Install as a Hermes plugin
+
+This repo is also a **portable Agent Plugins v1 package** — `plugin.json` at the root plus the `mind-kit` skill under `skills/`, so an agent can install it and read the operating instructions itself:
+
+```bash
+hermes plugins install biomimetic-brain    # from the catalog, once listed
+hermes plugins enable biomimetic-brain
+```
+
+Or straight from the repo, without the catalog: `hermes plugins install ousiaresearch/biomimetic-brain`. The package ships the skill and these scripts; it registers no hooks and no tools of its own.
+
 ## Half of a pair
 
 This kit measures. To make the readings matter in conversation, install **[The Return Line](https://github.com/ousiaresearch/return-line)**, which appends the state file and relevant history to the live turn without touching the system prompt.

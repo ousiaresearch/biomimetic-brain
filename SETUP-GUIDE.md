@@ -32,7 +32,7 @@ Every script resolves the agent directory in this order: `--agent-dir` on the co
 The kit ships `brain/<subsystem>/<name>.example.json` — the key structure, with the values stripped out. Seed them:
 
 ```bash
-cd ousia-mind-kit
+cd biomimetic-brain   # the repo you cloned (it shipped earlier as ousia-mind-kit)
 for f in $(find brain -name '*.example.json'); do
   dest="$MIND_AGENT_DIR/brain/${f#brain/}"; dest="${dest/.example/}"
   mkdir -p "$(dirname "$dest")"

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "biomimetic-brain",
+  "version": "1.1.0",
+  "description": "Meters and a gate for a long-running agent: 25 subsystem state files (energy, fatigue, circadian phase, motivation, novelty, attention, conflict, values, open questions), one folded brain-state.json the rest of the agent reads, four maintenance passes that keep it honest, and a read-only PROCEED / CAUTION / VETO decision gate whose refusals name the numbers that caused them.",
+  "author": {
+    "name": "Ousia Research",
+    "url": "https://github.com/ousiaresearch"
+  },
+  "homepage": "https://github.com/ousiaresearch/biomimetic-brain",
+  "repository": "https://github.com/ousiaresearch/biomimetic-brain",
+  "license": "MIT",
+  "keywords": [
+    "agent-state",
+    "interoception",
+    "fatigue",
+    "circadian",
+    "decision-gate",
+    "skills"
+  ]
+}
